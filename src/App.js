@@ -2,7 +2,7 @@ import { Routes, Route } from 'react-router-dom';
 import Home from './routes/home/home.component';
 import Navigation from './routes/navigation/navigation.component';
 import NoMatch from './routes/no-match/no-match.component';
-import SignIn from './routes/sign-in/sign-in.component';
+import Authentication from './routes/authentication/authentication.component';
 
 const Shop = () => {
   return <div>I am the Shop</div>;
@@ -14,7 +14,7 @@ const App = () => {
       <Route path='/' element={<Navigation />}>
         <Route index element={<Home />} />
         <Route path='shop' element={<Shop />} />
-        <Route path='sing-in' element={<SignIn />} />
+        <Route path='auth' element={<Authentication />} />
         <Route path='*' element={<NoMatch />} />
       </Route>
     </Routes>

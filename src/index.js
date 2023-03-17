@@ -1,9 +1,12 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
-import './index.scss';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
+
+import App from './App';
+import { UserProvider } from './components/contexts/user.context';
+
+import './index.scss';
 
 const rootElement = document.getElementById('root');
 const root = createRoot(rootElement);
@@ -11,7 +14,9 @@ const root = createRoot(rootElement);
 root.render(
   <StrictMode>
     <BrowserRouter>
-      <App />
+      <UserProvider>
+        <App />
+      </UserProvider>
     </BrowserRouter>
   </StrictMode>,
 );

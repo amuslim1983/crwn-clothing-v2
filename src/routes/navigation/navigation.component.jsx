@@ -1,9 +1,22 @@
-import { Fragment } from 'react';
+import { Fragment, useContext } from 'react';
 import { Outlet, Link } from 'react-router-dom';
+import { UserContext } from '../../components/contexts/user.context';
+
 import { ReactComponent as AppLogo } from '../../assets/crown.svg';
+
+import { signOutUser } from '../../utils/firebase/firebase.utils';
+
 import './navigation.styles.scss';
 
 const Navigation = () => {
+  const { currentUser } = useContext(UserContext);
+  //console.log(currentUser);
+
+  const handleUserSignOut = async () => {
+    await signOutUser();
+    //setCurrentUser(null); --AuthstateChangeListener Will take care of that
+  };
+
   return (
     <Fragment>
       <div className='navigation'>
@@ -14,9 +27,15 @@ const Navigation = () => {
           <Link to='/shop' className='nav-link'>
             SHOP
           </Link>
-          <Link to='/sing-in' className='nav-link'>
-            SIGN IN
-          </Link>
+          {currentUser ? (
+            <span className='nav-link' onClick={handleUserSignOut}>
+              Sign Out
+            </span>
+          ) : (
+            <Link to='/auth' className='nav-link'>
+              SIGN IN
+            </Link>
+          )}
         </div>
       </div>
       <Outlet />

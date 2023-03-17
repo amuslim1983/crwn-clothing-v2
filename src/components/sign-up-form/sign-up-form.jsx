@@ -5,6 +5,7 @@ import {
   CreateUserDocumentFromAuth,
 } from '../../utils/firebase/firebase.utils';
 
+//import { UserContext } from '../contexts/user.context';
 import MyButton from '../my-button/my-button.component';
 import './sign-up-form.styles.scss';
 
@@ -103,7 +104,7 @@ const SignUpForm = () => {
           id='confirmPassword'
         />
 
-        <MyButton type='submit' childern={'Sign Up'} buttonType='google'>
+        <MyButton type='submit' childern={'Sign Up'}>
           Sign Up
         </MyButton>
       </form>
