@@ -8,7 +8,7 @@ import { UserProvider } from './components/contexts/user.context';
 import { ProductsProvider } from './components/contexts/products.context';
 
 import './index.scss';
-import { CartProvider } from './components/contexts/CartContext';
+import { CartProvider } from './components/contexts/cart.context';
 
 const rootElement = document.getElementById('root');
 const root = createRoot(rootElement);

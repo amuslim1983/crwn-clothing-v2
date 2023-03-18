@@ -5,7 +5,7 @@ import { UserContext } from '../../components/contexts/user.context';
 import CartIcon from '../../components/cart-icon/cart-icon.component';
 import CartDropdown from '../../components/cart-dropdown/cart-dropdown.component';
 
-import { CartContext } from '../../components/contexts/CartContext';
+import { CartContext } from '../../components/contexts/cart.context';
 
 import { ReactComponent as AppLogo } from '../../assets/crown.svg';
 
