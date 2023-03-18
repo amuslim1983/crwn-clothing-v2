@@ -5,8 +5,10 @@ import reportWebVitals from './reportWebVitals';
 
 import App from './App';
 import { UserProvider } from './components/contexts/user.context';
+import { ProductsProvider } from './components/contexts/products.context';
 
 import './index.scss';
+import { CartProvider } from './components/contexts/CartContext';
 
 const rootElement = document.getElementById('root');
 const root = createRoot(rootElement);
@@ -15,7 +17,11 @@ root.render(
   <StrictMode>
     <BrowserRouter>
       <UserProvider>
-        <App />
+        <ProductsProvider>
+          <CartProvider>
+            <App />
+          </CartProvider>
+        </ProductsProvider>
       </UserProvider>
     </BrowserRouter>
   </StrictMode>,

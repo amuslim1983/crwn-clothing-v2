@@ -5,7 +5,7 @@ const BUTTON_TYPE_CLASSES = {
   google: 'google-sign-in',
 };
 
-const MyButton = ({ childern, buttonType, ...otherProps }) => {
+const MyButton = ({ children, buttonType, ...otherProps }) => {
   return (
     <button
       className={`button-container ${
@@ -15,7 +15,7 @@ const MyButton = ({ childern, buttonType, ...otherProps }) => {
       }`}
       {...otherProps}
     >
-      {childern}
+      {children}
     </button>
   );
 };
